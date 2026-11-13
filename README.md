@@ -40,3 +40,17 @@ npm run build
 ```
 
 The production bundle will be created in the `dist/` directory.
+
+## Deploy to GitHub Pages
+
+The Vite base path is configured for the `Task-6-ysse` GitHub repository. After
+connecting this project to `https://github.com/mdjoy2002/Task-6-ysse`, deploy
+the production build with:
+
+```bash
+npm run deploy
+```
+
+The `predeploy` script builds the app first, and `gh-pages` publishes the
+generated `dist/` directory. In the GitHub repository settings, select
+**Pages → Deploy from a branch → gh-pages → /(root)**.
