@@ -1,0 +1,65 @@
+:root {
+  font-family: Inter, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #dfeaf9;
+  background: #071320;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 12% 2%, rgba(34, 211, 238, 0.18), transparent 32rem),
+    radial-gradient(ellipse at 92% 18%, rgba(99, 102, 241, 0.2), transparent 34rem),
+    radial-gradient(ellipse at 50% 80%, rgba(20, 184, 166, 0.1), transparent 35rem),
+    linear-gradient(180deg, #071320 0%, #0d1b2a 55%, #10172a 100%);
+  background-attachment: fixed;
+}
+
+:root[data-theme='light'] body {
+  background:
+    radial-gradient(ellipse at 12% 2%, rgba(34, 211, 238, 0.2), transparent 32rem),
+    radial-gradient(ellipse at 92% 18%, rgba(99, 102, 241, 0.12), transparent 34rem),
+    linear-gradient(180deg, #f8fcff 0%, #eaf3ff 100%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}

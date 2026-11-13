@@ -1,0 +1,153 @@
+YSSE Course Search & Filter System
+কাজের সারাংশ ও Intern-দের জন্য পরিচিতি
+==================================================
+
+প্রকল্পটি কী?
+-------------
+এটি React ও Vite দিয়ে তৈরি একটি course catalog application। ব্যবহারকারীরা
+কোর্স খুঁজতে, category ও difficulty অনুযায়ী ছাঁকতে, course সম্পর্কে বিস্তারিত
+জানতে, পছন্দের course সংরক্ষণ করতে এবং enrollment তালিকা পরিচালনা করতে পারেন।
+ইন্টারফেসটি YSSE-inspired শিক্ষা প্ল্যাটফর্মের মতো করে সাজানো হয়েছে।
+
+Week 5 প্রসঙ্গে গুরুত্বপূর্ণ নোট
+--------------------------------
+এই workspace-এ আগের Week 5 project-এর source file বা আলাদা Week 5 task
+বিবরণ পাওয়া যায়নি। সরবরাহ করা assignment-এ YSSE Course Search & Filter System-এর
+Week 6 requirements উল্লেখ আছে। তাই নিচের নথিটি বর্তমান project-এ বাস্তবে করা
+কাজের সারাংশ; এটি Week 5-এর সঙ্গে নিশ্চিত feature-by-feature তুলনা নয়।
+Week 5-এর নির্দিষ্ট পরিবর্তন বোঝাতে হলে সেই সপ্তাহের brief বা project-এর
+বিবরণ প্রয়োজন।
+
+এই project-এ তৈরি করা কাজ
+-------------------------
+
+১. Project setup
+   - React, JSX ও Vite দিয়ে চালানো যায় এমন frontend project তৈরি করা হয়েছে।
+   - JavaScript এবং regular CSS ব্যবহার করা হয়েছে; TypeScript, Bootstrap,
+     Tailwind বা React UI framework ব্যবহার করা হয়নি।
+   - Course data UI code থেকে আলাদা রাখা হয়েছে।
+
+২. Course catalog ও sample data
+   - ১৪টি sample course যোগ করা হয়েছে।
+   - Course-গুলোর মধ্যে Development, Design, Data Science, Marketing,
+     AI & ML, Security এবং Business category আছে।
+   - Beginner, Intermediate ও Advanced—তিন ধরনের difficulty level আছে।
+   - Course-এ title, description, duration, hours, lesson count, instructor,
+     rating, price, learner count, image এবং skill tag-এর তথ্য রাখা হয়েছে।
+   - Course card-গুলো Array.map() দিয়ে তৈরি হয়, এবং প্রত্যেক item-এর unique key আছে।
+
+৩. Search ও filtering
+   - Search field-এ course title, category, description, instructor এবং tag
+     দিয়ে keyword search করা যায়।
+   - Search case-insensitive এবং আংশিক keyword-ও মেলায়।
+   - Category ও difficulty button দিয়ে তালিকা filter করা যায়।
+   - Duration ও minimum rating-এর filter রয়েছে।
+   - Search এবং একাধিক filter একসঙ্গে প্রয়োগ হয়।
+   - Search/filter বদলালে result count তাৎক্ষণিক আপডেট হয়।
+   - কোনো course না মিললে উপযুক্ত empty-state message দেখা যায়।
+   - Clear filters button search ও filter reset করে।
+
+৪. Sort ও featured course
+   - Recommended, highest rated, longest duration, lowest price এবং newest
+     অনুযায়ী course sort করা যায়।
+   - Catalog-এর featured course সক্রিয় filter/result অনুযায়ী বদলায়।
+
+৫. Saved/Favorites ও enrollment
+   - প্রতিটি course card-এর heart button দিয়ে course save/unsave করা যায়।
+   - Enroll now button চাপলে enrollment state চালু/বন্ধ হয়।
+   - Header-এ saved এবং enrolled course-এর সংখ্যা দেখায়।
+   - Saved courses এবং Enrolled courses আলাদা view-তে দেখা যায়।
+   - এই তালিকাগুলো browser-এর localStorage-এ থাকে; reload করলেও মুছে যায় না।
+   - এটি browser-এ locally সংরক্ষিত demo state; কোনো account বা server-এর সঙ্গে
+     synchronize হয় না।
+
+৬. Course details modal
+   - View course details button চাপলে নির্বাচিত course-এর তথ্যসহ modal খোলে।
+   - Modal-এ category, level, duration, hours, lesson count, rating,
+     instructor এবং learner count দেখা যায়।
+   - Modal থেকেই course save বা enroll করা যায়।
+   - Close button, modal-এর বাইরে click এবং Escape key দিয়ে modal বন্ধ করা যায়।
+
+৭. Theme, header, footer ও responsive design
+   - Light/Dark mode toggle যোগ করা হয়েছে; theme পছন্দ localStorage-এ থাকে।
+   - YSSE-styled header-এ Explore courses, Saved courses এবং Enrolled controls আছে।
+   - Footer-এ brand পরিচিতি ও কাজের navigation link রাখা হয়েছে।
+   - Gradient background, card, spacing, badges এবং hover state দিয়ে interface
+     সাজানো হয়েছে।
+   - Desktop, tablet ও mobile-এর জন্য CSS breakpoint রয়েছে; ছোট পর্দায় card grid
+     এক কলামে সাজায়।
+
+কোন React বিষয়গুলো ব্যবহার করা হয়েছে?
+-------------------------------------
+- Functional React components এবং JSX
+- Props দিয়ে course data ও button handlers CourseCard-এ পাঠানো
+- useState দিয়ে search, filters, theme, saved/enrolled state, active view এবং
+  selected course পরিচালনা
+- useMemo দিয়ে filter/sort result গণনা
+- useEffect দিয়ে localStorage sync এবং modal keyboard/scroll behavior পরিচালনা
+- Array.filter() দিয়ে combined filtering ও saved/enrolled list তৈরি
+- Array.map() দিয়ে course card, tag এবং filter option render
+- Conditional rendering দিয়ে featured section, empty state এবং details modal দেখানো
+- React event handler: onChange, onClick, onMouseDown
+
+Project-এর গুরুত্বপূর্ণ ফাইল
+---------------------------
+- src/App.jsx — app state, filtering/sorting এবং প্রধান layout
+- src/components/CourseCard.jsx — course card ও card action
+- src/data/courses.js — sample course data
+- src/App.css — catalog ও component-এর styling
+- src/index.css — global style, page background ও base rules
+- README.md — project-এর feature ও run/build নির্দেশনা
+- planning.txt — এই project summary
+
+চালানো ও যাচাই করার নিয়ম
+------------------------
+Project folder-এ terminal খুলে চালান:
+
+    npm install
+    npm run dev
+
+Terminal-এ দেখানো local URL browser-এ খুলুন।
+
+যাচাইয়ের জন্য:
+১. Search field-এ course title, instructor বা tag লিখুন।
+২. Category, difficulty, duration ও rating filter একসঙ্গে বদলে দেখুন।
+৩. Sort menu-র কয়েকটি option নির্বাচন করে card-এর ক্রম দেখুন।
+৪. Clear filters চাপলে search/filter আগের default-এ ফেরে কি না দেখুন।
+৫. Course save ও enroll করে Saved/Enrolled view খুলুন।
+৬. Page reload করে saved/enrolled তালিকা ও theme অক্ষত আছে কি না দেখুন।
+৭. Course details modal খুলে action, close button ও Escape key পরীক্ষা করুন।
+৮. Search-এ না-মেলা keyword দিয়ে empty state দেখুন।
+৯. Browser window ছোট করে responsive layout পরীক্ষা করুন।
+
+শেষ যাচাইকরণ:
+    npm run lint
+    npm run build
+
+এই project-এ lint check ও production build সফল হয়েছে।
+Development server-এ app load হওয়াও যাচাই করা হয়েছে; browser-এ saved view,
+modal interaction, theme control, reload persistence-ও পরীক্ষা করা হয়েছে।
+
+Intern-দের জন্য scope/requirement note
+--------------------------------------
+- Assignment attachment-এ Week 6 brief-এর requirements উল্লেখ আছে; Week 5-এর
+  requirements-এর তালিকা আলাদাভাবে নেই। তাই এই নথিটি Week 5-এর সঙ্গে পরিবর্তনের
+  পূর্ণ তুলনামূলক রিপোর্ট নয়।
+- Assignment-এ navbar-এর mobile hamburger menu, আলাদা SearchBar/FilterSection
+  component এবং image fail হলে fallback-এর কথা বলা আছে। বর্তমান UI-তে mobile
+  layout আছে, তবে hamburger menu ও ওই পৃথক component-গুলো তৈরি করা হয়নি;
+  image fallback-ও এখনও যোগ করা হয়নি।
+- Assignment-এ document.getElementById ব্যবহার না করার নির্দেশ আছে। বর্তমান
+  openLearningView-এ section-এ smooth scroll করাতে document.getElementById ব্যবহার
+  হয়েছে। Strict compliance দরকার হলে React ref ব্যবহার করে এটি বদলাতে হবে।
+- App-এ অতিরিক্ত করে favorite, enrollment, light/dark theme এবং localStorage
+  persistence যোগ হয়েছে; এগুলো core catalog search/filter-এর বাইরে অতিরিক্ত feature।
+- Footer-এর সব link বাস্তব route-এ যায় না; বর্তমান frontend-এ catalog ও saved
+  view-এর navigation-ই কার্যকর। Backend, payment, authentication বা database নেই।
+
+সারসংক্ষেপ
+----------
+বর্তমান ফলাফল একটি ready-to-run React course catalog: course খোঁজা ও filter করার
+সঙ্গে details modal, favorites, enrollment, persistence, theme toggle, responsive
+header/footer-ও আছে। Week 5-এর সঙ্গে ঠিক কী পরিবর্তন হয়েছে তা নির্ধারণ করতে
+Week 5-এর brief বা আগের project-এর বিবরণ প্রয়োজন।
