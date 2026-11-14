@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import CourseCard from '../components/CourseCard'
 import { courses } from '../data/courses'
 import '../App.css'
@@ -212,6 +213,10 @@ function CourseCatalog() {
           >
             Saved courses
           </button>
+          {/* TASK 7: Add a direct return link from the existing catalog to the main portal. */}
+          <Link className="nav-link" to="/">
+            YSSE Home
+          </Link>
         </nav>
 
         <div className="topbar-actions">
@@ -464,6 +469,8 @@ function CourseCatalog() {
         <div className="footer-links">
           <a href="#catalog" onClick={() => openLearningView('catalog')}>Course catalog</a>
           <button type="button" onClick={() => openLearningView('favorites')}>Saved courses</button>
+          {/* TASK 7: Keep portal navigation available at the bottom of the catalog page. */}
+          <Link to="/">YSSE Main Portal</Link>
           <span>© 2026 YSSE Learning</span>
         </div>
       </footer>

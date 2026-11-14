@@ -65,14 +65,14 @@ All notice and program records are assignment samples, not verified or official 
 
 ## Deploy to GitHub Pages
 
-The Vite base path is configured for the `Task-6-ysse` GitHub repository. After
-connecting this project to `https://github.com/mdjoy2002/Task-6-ysse`, deploy
-the production build with:
+The Vite base path and package homepage are configured for the `Task-7-ysse`
+GitHub repository. The build also copies the app entry point to `404.html` so
+GitHub Pages can load client-side routes directly. Deploy the production build with:
 
 ```bash
 npm run deploy
 ```
 
 The `predeploy` script builds the app first, and `gh-pages` publishes the
-generated `dist/` directory. In the GitHub repository settings, select
+generated `dist/` directory. In the `mdjoy2002/Task-7-ysse` repository settings, select
 **Pages → Deploy from a branch → gh-pages → /(root)**.
