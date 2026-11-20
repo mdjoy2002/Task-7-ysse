@@ -8,7 +8,6 @@ import NotFound from './pages/NotFound'
 import ProgramDetails from './pages/ProgramDetails'
 import Programs from './pages/Programs'
 import CourseCatalog from './pages/CourseCatalog'
-import './Portal.css'
 
 // TASK 7: Configure the multi-page YSSE portal routes and retain the original catalog at /courses.
 function App() {

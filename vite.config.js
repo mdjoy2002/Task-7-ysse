@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import { copyFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 
 // TASK 7: Match GitHub Pages asset and Router paths to the Task-7 repository.
 let buildOutputDirectory
@@ -20,5 +21,5 @@ const githubPagesFallback = {
 
 export default defineConfig({
   base: '/Task-7-ysse/',
-  plugins: [react(), githubPagesFallback],
+  plugins: [react(), tailwindcss(), githubPagesFallback],
 })

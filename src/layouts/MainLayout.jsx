@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar'
 // TASK 7: Shared page shell renders reusable navigation, routed content, and footer with Outlet.
 function MainLayout() {
   return (
-    <div className="portal-app">
+    <div className="min-h-screen bg-slate-50 text-slate-800">
       <Navbar />
-      <main className="portal-main">
+      <main>
         <Outlet />
       </main>
       <Footer />

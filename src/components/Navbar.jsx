@@ -16,35 +16,33 @@ function Navbar() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className="portal-header">
-      <div className="portal-header__inner">
-        <NavLink className="portal-brand" to="/" onClick={closeMenu} aria-label="YSSE home">
-          <span className="portal-brand__mark">YS</span>
-          <span className="portal-brand__name">
-            <strong>YSSE</strong>
-            <small>Youth-led change</small>
+    <header className="sticky top-0 z-30 border-b border-emerald-900/10 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex min-h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <NavLink className="flex items-center gap-3" to="/" onClick={closeMenu} aria-label="YSSE home">
+          <span className="grid h-11 w-11 place-items-center rounded-xl rounded-br-sm bg-emerald-700 text-sm font-black text-white">YS</span>
+          <span className="leading-tight">
+            <strong className="block text-lg tracking-widest text-emerald-950">YSSE</strong>
+            <small className="text-xs text-slate-500">Youth-led change</small>
           </span>
         </NavLink>
         <button
           aria-controls="portal-navigation"
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          className="portal-menu-toggle"
+          className="grid h-11 w-11 place-items-center rounded-lg border border-slate-200 text-emerald-900 md:hidden"
           onClick={() => setMenuOpen((open) => !open)}
           type="button"
         >
-          <span />
-          <span />
-          <span />
+          <span className="text-xl leading-none">{menuOpen ? '×' : '☰'}</span>
         </button>
         <nav
           aria-label="Main navigation"
-          className={`portal-nav${menuOpen ? ' portal-nav--open' : ''}`}
+          className={`${menuOpen ? 'flex' : 'hidden'} absolute left-0 right-0 top-[76px] flex-col border-b border-slate-200 bg-white px-4 py-4 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-7 md:border-0 md:p-0 md:shadow-none`}
           id="portal-navigation"
         >
           {links.map(({ to, label, end }) => (
             <NavLink
-              className={({ isActive }) => `portal-nav__link${isActive ? ' is-active' : ''}`}
+              className={({ isActive }) => `block py-2 text-sm font-semibold transition hover:text-emerald-700 ${isActive ? 'border-b-2 border-emerald-700 text-emerald-700' : 'text-slate-600'}`}
               end={end}
               key={to}
               onClick={closeMenu}
@@ -53,7 +51,7 @@ function Navbar() {
               {label}
             </NavLink>
           ))}
-          <NavLink className="portal-nav__course-link" onClick={closeMenu} to="/courses">
+          <NavLink className="mt-2 block rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-600 md:mt-0" onClick={closeMenu} to="/courses">
             Learning catalog
           </NavLink>
         </nav>
